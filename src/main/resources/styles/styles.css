@@ -1,0 +1,23 @@
+#customer2:hover{
+    -fx-effect: dropshadow(gaussian, #f1f803,20,0.0,0,0);
+}
+
+#item2:hover{
+    -fx-effect: dropshadow(gaussian, #f1f803,20,0.0,0,0);
+}
+
+#order2:hover{
+    -fx-effect: dropshadow(gaussian, #f1f803,20,0.0,0,0);
+}
+
+.container{
+    -fx-background-color: rgb(241, 248, 3);
+    -fx-background-radius: 10;
+}
+
+#imgResize #imgHome:hover {
+    -fx-effect: dropshadow(gaussian, #f1f803,20,0.0,0,0);
+    -fx-background-color: linear-gradient(to bottom, #f0f0f0, #d0d0d0);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}

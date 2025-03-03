@@ -1,0 +1,124 @@
+/* styles.css */
+/*.root {*/
+/*    -fx-font-family: 'Open Sans', sans-serif;*/
+/*    -fx-font-size: 14px;*/
+/*    -fx-background-color: linear-gradient(to bottom, #f0f0f0, #d0d0d0);*/
+/*}*/
+
+/*.label {*/
+/*    -fx-text-fill: #333333;*/
+/*}*/
+
+/*.button {*/
+/*    -fx-background-color: #4CAF50; !* Default to Save button color *!*/
+/*    -fx-text-fill: white;*/
+/*    -fx-background-radius: 5;*/
+/*    -fx-border-radius: 5;*/
+/*    -fx-padding: 8 15;*/
+/*    -fx-font-weight: bold;*/
+/*}*/
+
+/*.button:hover {*/
+/*    -fx-background-color: #45a049;*/
+/*}*/
+
+/*.button[fx|text="Update"] {*/
+/*    -fx-background-color: #2196F3;*/
+/*}*/
+
+/*.button[fx|text="Update"]:hover {*/
+/*    -fx-background-color: #1e88e5;*/
+/*}*/
+
+/*.button[fx|text="Delete"] {*/
+/*    -fx-background-color: #f44336;*/
+/*}*/
+
+/*.button[fx|text="Delete"]:hover {*/
+/*    -fx-background-color: #e53935;*/
+/*}*/
+
+/*.button[fx|text="Reset"] {*/
+/*    -fx-background-color: #ff9800;*/
+/*}*/
+
+/*.button[fx|text="Reset"]:hover {*/
+/*    -fx-background-color: #fb8c00;*/
+/*}*/
+
+/*.button[fx|text="All Customer Report"] {*/
+/*    -fx-background-color: #9C27B0;*/
+/*}*/
+
+/*.button[fx|text="All Customer Report"]:hover {*/
+/*    -fx-background-color: #8e24aa;*/
+/*}*/
+
+/*.table-view {*/
+/*    -fx-background-color: #ffffff;*/
+/*    -fx-border-color: #dddddd;*/
+/*    -fx-border-width: 1;*/
+/*    -fx-border-radius: 5;*/
+/*    -fx-padding: 10;*/
+/*}*/
+.text-field {
+    -fx-background-color: linear-gradient(to bottom, #f0f0f0, #d0d0d0);
+    -fx-background-insets: 0;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10 5 10;
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);
+    -fx-focus-color: #666666;
+    -fx-faint-focus-color: transparent;
+}
+
+.button {
+    -fx-background-color: linear-gradient(to bottom, #f0f0f0, #d0d0d0);
+    -fx-background-insets: 0;
+    -fx-background-radius: 5;
+    -fx-padding: 4 9; /* Adjust these values to keep default size */
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.3, 0, 1);
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #f0f0f0, #d0d0d0);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.3, 0, 3);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#imgHome:hover{
+    -fx-effect: dropshadow(gaussian, #f1f803,20,0.0,0,0);
+}
+
+#btnAdd {
+    -fx-background-color: #40E0D0;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #FFFFFF;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.8) , 4,0.0 , 2 , 2 );
+}
+
+@keyframes bubble {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.bubble-animation {
+    animation: bubble 2s infinite;
+}
+
