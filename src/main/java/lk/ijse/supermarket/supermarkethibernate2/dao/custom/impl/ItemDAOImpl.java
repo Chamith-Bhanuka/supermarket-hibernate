@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -100,5 +101,30 @@ public class ItemDAOImpl implements ItemDAO {
                 .uniqueResult();
 
         return Optional.ofNullable(lastPk);
+    }
+
+    @Override
+    public ArrayList<String> getAllItemIds() {
+        Session session = FactoryConfiguration.getInstance().getSession();
+
+        //get all Ids
+        Query<String> query = session.createQuery("SELECT i.id FROM Item i", String.class);
+        List<String> itemIds = query.list();
+
+        ArrayList<String> itemIdsArrayList = new ArrayList<>(itemIds);
+
+        session.close();
+
+        return itemIdsArrayList;
+    }
+
+    @Override
+    public boolean updateItemWithOrder(Session session, Item item) {
+        try {
+            session.merge(item);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }

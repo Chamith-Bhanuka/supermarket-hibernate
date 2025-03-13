@@ -12,4 +12,5 @@ module lk.ijse.supermarket.supermarkethibernate2 {
     opens lk.ijse.supermarket.supermarkethibernate2.view.tdm to javafx.base;
     opens lk.ijse.supermarket.supermarkethibernate2.config to jakarta.persistence;
     exports lk.ijse.supermarket.supermarkethibernate2;
+    exports lk.ijse.supermarket.supermarkethibernate2.query;
 }

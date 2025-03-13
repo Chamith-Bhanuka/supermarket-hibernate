@@ -13,7 +13,7 @@ public class DBConnection {
     private final Connection connection;
 
     private DBConnection() throws SQLException {
-        String URL = "jdbc:mysql://localhost:3306/supermarketfx?createDatabaseIfNotExist=true";
+        String URL = "jdbc:mysql://localhost:3306/mrfluffy?createDatabaseIfNotExist=true";
         String USER = "root";
         String PASSWORD = "Cb@IJSE#JDBC";
         connection = DriverManager.getConnection(URL, USER, PASSWORD);

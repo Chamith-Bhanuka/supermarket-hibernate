@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public class CustomerBOImpl implements CustomerBO {
 
-    CustomerDAO dao = (CustomerDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOType.Customer);
+    CustomerDAO dao = DAOFactory.getInstance().getDAO(DAOFactory.DAOType.Customer);
 
     @Override
     public boolean save(CustomerDTO customerDTO) {
@@ -64,7 +64,20 @@ public class CustomerBOImpl implements CustomerBO {
 
     @Override
     public Optional<CustomerDTO> findByPk(String pk) {
-        return Optional.empty();
+
+        CustomerDTO customerDTO = new CustomerDTO();
+
+        Optional<Customer> entityOptional = dao.findByPk(pk);
+
+        if (entityOptional.isPresent()) {
+            customerDTO.setId(entityOptional.get().getId());
+            customerDTO.setName(entityOptional.get().getName());
+            customerDTO.setNic(entityOptional.get().getNic());
+            customerDTO.setEmail(entityOptional.get().getEmail());
+            customerDTO.setPhone(entityOptional.get().getPhone());
+        }
+        return Optional.of(customerDTO);
+
     }
 
     @Override
@@ -81,5 +94,10 @@ public class CustomerBOImpl implements CustomerBO {
         Optional<String> optionalNewValue = Optional.of(newValue);
 
         return optionalNewValue;
+    }
+
+    @Override
+    public ArrayList<String> getAllCustomerIds() {
+        return dao.getAllCustomerIds();
     }
 }

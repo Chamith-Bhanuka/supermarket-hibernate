@@ -37,6 +37,6 @@ public class Item implements SuperEntity {
     @Column(name = "unit_price", precision = 10, scale = 2)
     private BigDecimal unitPrice;
 
-    @OneToMany(mappedBy = "item")
-    private List<OrderDetails> orderDetails;
+//    @OneToMany(mappedBy = "item")
+//    private List<OrderDetails> orderDetails;
 }

@@ -16,6 +16,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="root" prefHeight="600.0" prefWidth="950.0" style="-fx-background-color: linear-gradient(to bottom, #f0f0f0, #d0d0d0);" stylesheets="@../styles/customerFormStyles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.supermarket.supermarkethibernate2.controller.OrderController">
     <children>
@@ -37,24 +38,36 @@
             <GridPane hgap="10.0" vgap="10.0" VBox.vgrow="ALWAYS">
                 <children>
                     <Label style="-fx-font-family: 'Open Sans'; -fx-font-size: 14px;" text="Order ID" textFill="#333333" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
-                    <Label text="O00X" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+                    <Label fx:id="lblOrderId" text="O00X" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
                     <Label style="-fx-font-family: 'Open Sans'; -fx-font-size: 14px;" text="Order Date" textFill="#333333" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
-                    <Label text="yyyy-mm-dd" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+                    <Label fx:id="lblOrderDate" text="yyyy-mm-dd" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
                     <Label style="-fx-font-family: 'Open Sans'; -fx-font-size: 14px;" text="Customer ID" textFill="#333333" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
-                    <ComboBox fx:id="cmbCustomerID" prefHeight="26.0" prefWidth="147.0" styleClass="text-field" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                    <ComboBox fx:id="cmbCustomerID" onAction="#onCmbCustomer" prefHeight="26.0" prefWidth="147.0" styleClass="text-field" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
                     <Label style="-fx-font-family: 'Open Sans'; -fx-font-size: 14px;" text="Customer Name" textFill="#333333" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
-                    <Label text="Customer Name" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                    <Label fx:id="lblCustomerName" text="Customer Name" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font></Label>
                     <Label style="-fx-font-family: 'Open Sans'; -fx-font-size: 14px;" text="Item ID" textFill="#333333" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
-                    <ComboBox fx:id="cmbItemID" prefHeight="26.0" prefWidth="147.0" styleClass="text-field" stylesheets="@../styles/customerFormStyles.css" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+                    <ComboBox fx:id="cmbItemID" onAction="#onCmbItem" prefHeight="26.0" prefWidth="147.0" styleClass="text-field" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
                     <Label style="-fx-font-family: 'Open Sans'; -fx-font-size: 14px;" text="Item Name" textFill="#333333" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
-                    <Label text="Item Name" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+                    <Label fx:id="lblItemName" style="-fx-font-weight: bold;" text="Item Name" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+                  <font>
+                     <Font size="14.0" />
+                  </font></Label>
                     <Label style="-fx-font-family: 'Open Sans'; -fx-font-size: 14px;" text="Qty On Hand" textFill="#333333" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
-                    <Label GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+                    <Label fx:id="lblQty" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font></Label>
                     <Label style="-fx-font-family: 'Open Sans'; -fx-font-size: 14px;" text="Unit Price" textFill="#333333" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
-                    <Label GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+                    <Label fx:id="lblUnitPrice" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font></Label>
                     <Label style="-fx-font-family: 'Open Sans'; -fx-font-size: 14px;" text="Qty" textFill="#333333" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS" />
                     <TextField fx:id="txtQty" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS" />
-               <Button fx:id="btnAdd" layoutX="502.0" layoutY="143.0" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: #9C27B0; -fx-text-fill: white;" text="Add to Cart" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+               <Button fx:id="btnAdd" layoutX="502.0" layoutY="143.0" onMouseClicked="#onAddToCartClick" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: #9C27B0; -fx-text-fill: white;" text="Add to Cart" GridPane.columnIndex="3" GridPane.rowIndex="4" />
                 </children>
             <columnConstraints>
                <ColumnConstraints />
@@ -71,19 +84,20 @@
             </rowConstraints>
             </GridPane>
             <HBox spacing="10.0" VBox.vgrow="ALWAYS">
-                <TableView HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                <TableView fx:id="tblOrder" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
                     <columns>
-                        <TableColumn prefWidth="160.00000989437103" text="C1" />
-                        <TableColumn prefWidth="112.80000305175781" text="C2" />
-                        <TableColumn prefWidth="228.800048828125" text="C3" />
-                        <TableColumn prefWidth="139.99996948242188" text="C4" />
-                        <TableColumn prefWidth="152.7999267578125" text="C5" />
+                        <TableColumn fx:id="colItemId" minWidth="132.4" prefWidth="-1.0" text="Item ID" />
+                        <TableColumn fx:id="colItemName" minWidth="132.4" prefWidth="-1.0" text="Item Name" />
+                        <TableColumn fx:id="colQty" minWidth="132.4" prefWidth="-1.0" text="Quantity" />
+                        <TableColumn fx:id="colnitPrice" minWidth="132.4" prefWidth="-1.0" text="Unit Price" />
+                        <TableColumn fx:id="colTotal" minWidth="132.4" prefWidth="-1.0" text="Total" />
+                  <TableColumn fx:id="colRemove" minWidth="132.4" prefWidth="-1.0" text="Remove" />
                     </columns>
                 </TableView>
             <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="100.0" spacing="15.0">
                <children>
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="120.0" minWidth="120.0" mnemonicParsing="false" style="-fx-background-color: #ff9800; -fx-text-fill: white;" stylesheets="@../styles/customerFormStyles.css" text="Reset" VBox.vgrow="ALWAYS" />
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="120.0" minWidth="120.0" mnemonicParsing="false" style="-fx-background-color: #000080; -fx-text-fill: white;" stylesheets="@../styles/customerFormStyles.css" text="Place Order" VBox.vgrow="ALWAYS">
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="120.0" minWidth="120.0" mnemonicParsing="false" onMouseClicked="#onResetClick" style="-fx-background-color: #ff9800; -fx-text-fill: white;" stylesheets="@../styles/customerFormStyles.css" text="Reset" VBox.vgrow="ALWAYS" />
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="120.0" minWidth="120.0" mnemonicParsing="false" onMouseClicked="#onPlaceOrderClick" style="-fx-background-color: #000080; -fx-text-fill: white;" stylesheets="@../styles/customerFormStyles.css" text="Place Order" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="1.2" />
                      </VBox.margin>

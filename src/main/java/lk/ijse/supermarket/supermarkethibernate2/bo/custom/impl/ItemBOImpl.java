@@ -13,7 +13,7 @@ import java.util.Optional;
 
 public class ItemBOImpl implements ItemBO {
 
-    ItemDAO dao = (ItemDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOType.Item);
+    ItemDAO dao = DAOFactory.getInstance().getDAO(DAOFactory.DAOType.Item);
 
     @Override
     public boolean save(ItemDTO itemDTO) {
@@ -63,7 +63,17 @@ public class ItemBOImpl implements ItemBO {
 
     @Override
     public Optional<ItemDTO> findByPk(String pk) {
-        return Optional.empty();
+        ItemDTO itemDTO = new ItemDTO();
+
+        Optional<Item> entity = dao.findByPk(pk);
+
+        if (entity.isPresent()) {
+            itemDTO.setItemId(entity.get().getId());
+            itemDTO.setItemName(entity.get().getName());
+            itemDTO.setQuantity(entity.get().getQuantity());
+            itemDTO.setPrice(entity.get().getUnitPrice().doubleValue());
+        }
+        return Optional.of(itemDTO);
     }
 
     @Override
@@ -79,5 +89,10 @@ public class ItemBOImpl implements ItemBO {
         Optional<String> optionalNewValue = Optional.of(newValue);
 
         return optionalNewValue;
+    }
+
+    @Override
+    public ArrayList<String> getAllItemIds() {
+        return dao.getAllItemIds();
     }
 }

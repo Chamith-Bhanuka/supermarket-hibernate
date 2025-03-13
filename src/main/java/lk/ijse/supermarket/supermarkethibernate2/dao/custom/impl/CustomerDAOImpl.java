@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -108,4 +109,19 @@ public class CustomerDAOImpl implements CustomerDAO {
         return Optional.ofNullable(lastPk);
     }
 
+    @Override
+    public ArrayList<String> getAllCustomerIds() {
+        Session session = FactoryConfiguration.getInstance().getSession();
+
+        //get all Ids
+        Query<String> query = session.createQuery("SELECT c.id FROM Customer c", String.class);
+        List<String> customersIds = query.list();
+
+        ArrayList<String> customerIds = new ArrayList<>(customersIds);
+
+        session.close();
+
+        return customerIds;
+
+    }
 }

@@ -2,6 +2,8 @@ package lk.ijse.supermarket.supermarkethibernate2.bo.custom;
 
 import lk.ijse.supermarket.supermarkethibernate2.bo.SuperBO;
 import lk.ijse.supermarket.supermarkethibernate2.dto.CustomerDTO;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,5 +14,6 @@ public interface CustomerBO extends SuperBO {
     List<CustomerDTO> getAll();
     Optional<CustomerDTO> findByPk(String pk);
     Optional<String> getLastPk();
+    ArrayList<String> getAllCustomerIds();
 
 }
